@@ -346,11 +346,11 @@ body {
           selectColor(colors[0]);
         }
 
-        function initialize() {
+        function initialize(lat,long) {
           
           var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 15,
-            center: new google.maps.LatLng(22.344, 114.048),
+            center: new google.maps.LatLng(lat,long),
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             disableDefaultUI: true,
             zoomControl: true
@@ -400,11 +400,18 @@ body {
           google.maps.event.addListener(drawingManager, 'drawingmode_changed', clearSelection);
           google.maps.event.addListener(map, 'click', clearSelection);
           google.maps.event.addDomListener(document.getElementById('delete-button'), 'click', deleteSelectedShape);
-
-          buildColorPalette();
+          
+         
         }
-
-        google.maps.event.addDomListener(window, 'load', initialize);
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+              const latitude = position.coords.latitude;
+              const longitude = position.coords.longitude;
+              google.maps.event.addDomListener(window, 'load', initialize(latitude,longitude));
+            });
+        } 
+     
+        buildColorPalette();
         function get_map()
         {
          var address =  document.getElementById("address").value;
@@ -414,7 +421,7 @@ body {
           .then(res => res.json())
           .then((data) => {
           
-            initMapD(data.results[0].geometry.location.lat,data.results[0].geometry.location.lng);
+            initialize(data.results[0].geometry.location.lat,data.results[0].geometry.location.lng);
             
             
           })
