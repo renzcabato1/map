@@ -349,11 +349,13 @@ body {
         function initialize(lat,long) {
           
           var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
+            zoom: 18,
             center: new google.maps.LatLng(lat,long),
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            mapTypeId: google.maps.MapTypeId.HYBRID,
             disableDefaultUI: true,
-            zoomControl: true
+            zoomControl: true,
+            heading: 90,
+            tilt: 0
           });
 
 
@@ -432,6 +434,11 @@ body {
           map = new google.maps.Map(document.getElementById("map"), {
               center: { lat:lat, lng: lng },
               zoom: 50,
+              tilt:0,
+              mapTypeId: google.maps.MapTypeId.HYBRID,
+            zoom: 6,
+            heading: 90,
+            tilt: 45
             });
           }
         </script>
