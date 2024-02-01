@@ -175,18 +175,10 @@ body {
           <div class="section-title">
             {{-- <h2>Contact</h2> --}}
             <h3><span>Area Calculator</span></h3>
-            <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+            {{-- <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p> --}}
           </div>
   
-          <div class=" form-group row">
-            <div class="col-sm-9">
-              <input type="text" name="address" class="form-control col-sm-8" id="address" placeholder="Search Address" required>
-            </div>
-            <div class="col-sm-3">
-              <button class='btn btn-info btn-sm col-lg-4' onclick='get_map();'  id="search">Search</button> 
-            </div>
-              
-          </div>
+          
           <hr>
           <div class=" form-group row">
             <div class="col-md-12 text-center">
@@ -198,11 +190,25 @@ body {
                     
             
           </div>
+          <hr>
           <div class="row" data-aos="fade-up" data-aos-delay="100">
-           
-            <div class="col-lg-12 ">
-              <button class='btn btn-danger btn-sm '  id="delete-button">Delete Selected Shape</button> 
+            <div class="col-lg-5 ">
+              <button class='btn btn-danger btn-sm '  id="delete-button">Delete Selected Shape</button> <br>
               <button class='btn btn-success btn-sm' id="calculate" onClick="calcar()" >Calculate Area</button>
+            </div>
+            <div class='col-lg-7 text-right'>
+              <div class=" form-group row">
+                <div class="col-sm-10">
+                  <input type="text" name="address" class="form-control col-sm-8" id="address" placeholder="Search Address" required>
+                </div>
+                <div class="col-sm-2">
+                  <button class='btn btn-info btn-sm col-lg-4 btn-block w-100' onclick='get_map();'  id="search">Search</button> 
+                </div>
+                  
+              </div>
+            </div>
+            <div class="col-lg-12 ">
+           
               
               <div id="color-palette"></div>
                   <div  class="mb-4 mb-lg-0"  id="map" frameborder="0" style="border:0; width: 100%; height: 650px;"></div>
