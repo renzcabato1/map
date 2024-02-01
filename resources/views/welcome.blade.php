@@ -188,29 +188,26 @@ body {
               
           </div>
           <hr>
-  
+          <div class=" form-group row">
+            <div class="col-md-12 text-center">
+              <form>
+              
+                <h2>AREA : <span id="area" class='text-left'> </span></h2> 
+               </form>
+            </div>
+                    
+            
+          </div>
           <div class="row" data-aos="fade-up" data-aos-delay="100">
-  
-            <div class="col-lg-8 ">
-             
+           
+            <div class="col-lg-12 ">
+              <button class='btn btn-danger btn-sm '  id="delete-button">Delete Selected Shape</button> 
+              <button class='btn btn-success btn-sm' id="calculate" onClick="calcar()" >Calculate Area</button>
+              
               <div id="color-palette"></div>
-                  <div  class="mb-4 mb-lg-0"  id="map" frameborder="0" style="border:0; width: 100%; height: 384px;"></div>
+                  <div  class="mb-4 mb-lg-0"  id="map" frameborder="0" style="border:0; width: 100%; height: 650px;"></div>
            </div>
   
-            <div class="col-lg-4">
-                <div id="panel">
-                    <div id="color-palette"></div>
-                    <div>
-                        <button class='btn btn-danger btn-sm mb-2'  id="delete-button">Delete Selected Shape</button> 
-                        <br>
-                        <button class='btn btn-success btn-sm mb-2' id="calculate" onClick="calcar()" >Calculate Area</button>
-                        <div class="section-title">
-                          <h2>AREA</h2><h2 id="area" class='text-left'></h2>
-                        </div>
-                    </div>
-                  </div>
-              
-            </div>
   
           </div>
   
