@@ -186,6 +186,7 @@ body {
               
                 <h2>AREA in Sq. Meteers: <span id="area" class='text-left'> </span> </h2> 
                 <h2>AREA in Sq. Feet: <span id="area-foot" class='text-left'> </span> </h2> 
+                <h2>Recommended bottles of Cal Flo Lime: <span id="bottle-of-lime" class='text-left'>0</span> oz</h2> 
                </form>
             </div>
                     
@@ -283,6 +284,7 @@ body {
             var area = google.maps.geometry.spherical.computeArea(selectedShape.getPath());
             document.getElementById("area").innerHTML = area.toFixed(2);
             document.getElementById("area-foot").innerHTML = (area*10.7639).toFixed(2);
+            document.getElementById("bottle-of-lime").innerHTML = (area*10.7639*.008).toFixed(2) + " oz";
           // console.log(area);
         }
 
@@ -402,9 +404,13 @@ body {
                 maximumFractionDigits: 2
               });
             document.getElementById("area-foot").innerHTML = (area*10.7639).toLocaleString(undefined, {
-  minimumFractionDigits: 2,
-  maximumFractionDigits: 2
-});
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+          });
+          document.getElementById("bottle-of-lime").innerHTML = (area*10.7639*.008).toLocaleString(undefined, {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+          }); + " oz";
               
               setSelection(newShape);
             }
